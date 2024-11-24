@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'maven'
+}
+
+group = 'com.example'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'forge'
+        url = 'https://files.minecraftforge.net/maven'
+    }
+}
+
+dependencies {
+    implementation fg.deobf("net.minecraftforge:forge:1.16.5-36.1.0")
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.16.5'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                arcane {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                arcane {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}

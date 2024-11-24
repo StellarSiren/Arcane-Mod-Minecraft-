@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+issueTrackerURL="https://example.com/issues"
+
+[[mods]]
+modId="arcane"
+version="1.0.0"
+displayName="Arcane Mod"
+description="A mod that adds custom enchantments to Minecraft."
+authors="Your Name"
+credits="Thanks to Forge and Minecraft community."
+logoFile="assets/arcane/textures/logo.png"
